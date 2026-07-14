@@ -163,8 +163,10 @@ create table producto(
 	precventprod MONEY not null CHECK(precventprod >= 0), 
 	fecpubprod DATE not null, 
 	estprod BIT not null DEFAULT 1,
+	idprov int not null,
 	idcategoria int not null, 
 	ideditorial int not null, 
+	foreign key (idprov) references proveedor(idprov),
 	foreign key (idcategoria) references categoria(idcategoria),
 	foreign key (ideditorial) references editorial(ideditorial)
 )
@@ -253,28 +255,28 @@ go
 --pais
 INSERT INTO pais (nompais)
 VALUES
-('Per˙'),
-('EspaÒa'),
+('Per√∫'),
+('Espa√±a'),
 ('Argentina'),
 ('Colombia'),
-('MÈxico'),
+('M√©xico'),
 ('Estados Unidos'),
 ('Reino Unido'),
 ('Francia'),
 ('Austria'),
 ('Israel'),
-('Canad·');
+('Canad√°');
 GO
 
 --categoria
 INSERT INTO categoria(nomcategoria) 
 VALUES
 ('Novela'),
-('ProgramaciÛn'),
-('PsicologÌa'),
+('Programaci√≥n'),
+('Psicolog√≠a'),
 ('Historia'),
 ('Infantil'),
-('Ciencia FicciÛn');
+('Ciencia Ficci√≥n');
 GO
 
 --editorial
@@ -290,15 +292,15 @@ GO
 --proveedores
 INSERT INTO proveedor(razsocprov,rucprov,telfprov,corprov,direcprov) 
 VALUES
-('Distribuidora Librera Per˙ SAC','20547896321','014567890','ventas@dlperu.com','Av. Argentina 1540'),
+('Distribuidora Librera Per√∫ SAC','20547896321','014567890','ventas@dlperu.com','Av. Argentina 1540'),
 ('Libros Unidos SAC','20635874125','017894563','ventas@librosunidos.pe','Av. Javier Prado 1500');
 GO
 
 INSERT INTO tipopago(nomtippag) 
 VALUES
 ('Efectivo'),
-('Tarjeta DÈbito'),
-('Tarjeta CrÈdito'),
+('Tarjeta D√©bito'),
+('Tarjeta Cr√©dito'),
 ('Yape'),
 ('Plin');
 GO
@@ -306,7 +308,7 @@ GO
 INSERT INTO tipodocumento(nomtipdoc) 
 VALUES
 ('DNI'),
-('CarnÈ de ExtranjerÌa'),
+('Carn√© de Extranjer√≠a'),
 ('Pasaporte');
 GO
 
@@ -317,10 +319,10 @@ INSERT INTO rol(nomrol) VALUES
 GO
 
 --distritos
-insert into distrito(nomdis,estdis) values('AncÛn',1);
+insert into distrito(nomdis,estdis) values('Anc√≥n',1);
 insert into distrito(nomdis,estdis) values('Ate',1);
 insert into distrito(nomdis,estdis) values('Barranco',1);
-insert into distrito(nomdis,estdis) values('BreÒa',1);
+insert into distrito(nomdis,estdis) values('Bre√±a',1);
 insert into distrito(nomdis,estdis) values('Carabayllo',1);
 insert into distrito(nomdis,estdis) values('Chaclacayo',1);
 insert into distrito(nomdis,estdis) values('Chorrillos',1);
@@ -328,59 +330,59 @@ insert into distrito(nomdis,estdis) values('Cieneguilla',1);
 insert into distrito(nomdis,estdis) values('Comas',1);
 insert into distrito(nomdis,estdis) values('El Agustino',1);
 insert into distrito(nomdis,estdis) values('Independencia',1);
-insert into distrito(nomdis,estdis) values('Jes˙s MarÌa',1);
+insert into distrito(nomdis,estdis) values('Jes√∫s Mar√≠a',1);
 insert into distrito(nomdis,estdis) values('La Molina',1);
 insert into distrito(nomdis,estdis) values('La Victoria',1);
 insert into distrito(nomdis,estdis) values('Lima',1);
 insert into distrito(nomdis,estdis) values('Lince',1);
 insert into distrito(nomdis,estdis) values('Los Olivos',1);
 insert into distrito(nomdis,estdis) values('Lurigancho',1);
-insert into distrito(nomdis,estdis) values('LurÌn',1);
+insert into distrito(nomdis,estdis) values('Lur√≠n',1);
 insert into distrito(nomdis,estdis) values('Magdalena del Mar',1);
 insert into distrito(nomdis,estdis) values('Miraflores',1);
-insert into distrito(nomdis,estdis) values('Pachac·mac',1);
+insert into distrito(nomdis,estdis) values('Pachac√°mac',1);
 insert into distrito(nomdis,estdis) values('Pucusana',1);
 insert into distrito(nomdis,estdis) values('Pueblo Libre',1);
 insert into distrito(nomdis,estdis) values('Puente Piedra',1);
 insert into distrito(nomdis,estdis) values('Punta Hermosa',1);
 insert into distrito(nomdis,estdis) values('Punta Negra',1);
-insert into distrito(nomdis,estdis) values('RÌmac',1);
+insert into distrito(nomdis,estdis) values('R√≠mac',1);
 insert into distrito(nomdis,estdis) values('San Bartolo',1);
 insert into distrito(nomdis,estdis) values('San Borja',1);
 insert into distrito(nomdis,estdis) values('San Isidro',1);
 insert into distrito(nomdis,estdis) values('San Juan de Lurigancho',1);
 insert into distrito(nomdis,estdis) values('San Juan de Miraflores',1);
 insert into distrito(nomdis,estdis) values('San Luis',1);
-insert into distrito(nomdis,estdis) values('San MartÌn de Porres',1);
+insert into distrito(nomdis,estdis) values('San Mart√≠n de Porres',1);
 insert into distrito(nomdis,estdis) values('San Miguel',1);
 insert into distrito(nomdis,estdis) values('Santa Anita',1);
-insert into distrito(nomdis,estdis) values('Santa MarÌa del Mar',1);
+insert into distrito(nomdis,estdis) values('Santa Mar√≠a del Mar',1);
 insert into distrito(nomdis,estdis) values('Santa Rosa',1);
 insert into distrito(nomdis,estdis) values('Santiago de Surco',1);
 insert into distrito(nomdis,estdis) values('Surquillo',1);
 insert into distrito(nomdis,estdis) values('Villa El Salvador',1);
-insert into distrito(nomdis,estdis) values('Villa MarÌa del Triunfo',1);
+insert into distrito(nomdis,estdis) values('Villa Mar√≠a del Triunfo',1);
 insert into distrito(nomdis,estdis) values('Callao',1);
 insert into distrito(nomdis,estdis) values('Bellavista',1);
 insert into distrito(nomdis,estdis) values('Carmen de La Legua-Reynoso',1);
 insert into distrito(nomdis,estdis) values('La Perla',1);
 insert into distrito(nomdis,estdis) values('La Punta',1);
 insert into distrito(nomdis,estdis) values('Ventanilla',1);
-insert into distrito(nomdis,estdis) values('Mi Per˙',1);
+insert into distrito(nomdis,estdis) values('Mi Per√∫',1);
 go
 
 --cliente
 INSERT INTO cliente
 (nomcli, apepcli, apemcli, numdoccli, fecnaccli, dircli, telcli, corcli, idtipdoc, iddis)
 VALUES
-('Luis','RamÌrez','Torres','72894561','1994-05-18','Av. Larco 450','987654321','luis.ramirez@gmail.com',1,1),
-('MarÌa','Fern·ndez','Salas','74589632','1990-10-05','Av. Benavides 2150','945612378','mariafs@gmail.com',1,3),
-('Carlos','PÈrez','GÛmez','70125896','1988-01-30','Av. AviaciÛn 1234','934561278','cperez@gmail.com',1,5),
+('Luis','Ram√≠rez','Torres','72894561','1994-05-18','Av. Larco 450','987654321','luis.ramirez@gmail.com',1,1),
+('Mar√≠a','Fern√°ndez','Salas','74589632','1990-10-05','Av. Benavides 2150','945612378','mariafs@gmail.com',1,3),
+('Carlos','P√©rez','G√≥mez','70125896','1988-01-30','Av. Aviaci√≥n 1234','934561278','cperez@gmail.com',1,5),
 ('Andrea','Castillo','Rojas','78451236','1998-07-20','Jr. Castilla 520','923451876','andrea.castillo@gmail.com',1,9),
-('JosÈ','Flores','Vargas','73698521','1985-03-12','Av. Brasil 1890','912345678','jflores@gmail.com',1,10),
-('Valeria','Quispe','Huam·n','76452319','1997-12-02','Av. Angamos 960','956234781','vquispe@gmail.com',1,4),
+('Jos√©','Flores','Vargas','73698521','1985-03-12','Av. Brasil 1890','912345678','jflores@gmail.com',1,10),
+('Valeria','Quispe','Huam√°n','76452319','1997-12-02','Av. Angamos 960','956234781','vquispe@gmail.com',1,4),
 ('Diego','Mendoza','Paredes','71985632','1992-06-09','Av. Javier Prado 2100','967812345','dmendoza@gmail.com',1,2),
-('Camila','Navarro','LÛpez','74123698','1999-09-14','Av. Primavera 875','981234567','camila.navarro@gmail.com',1,6);
+('Camila','Navarro','L√≥pez','74123698','1999-09-14','Av. Primavera 875','981234567','camila.navarro@gmail.com',1,6);
 GO
 
 --empleado
@@ -388,22 +390,22 @@ INSERT INTO empleado
 (nomemp, apepemp, apememp, numdocemp, fecnacemp, diremp, telemp, coremp,
 fecinemp,usuemp, claemp, sueldoemp, numhoremp, idtipdoc, idrol, iddis)
 VALUES
-('Ricardo','Canales','LÛpez','72589634','1995-02-10','Av. Canad· 500','999111222','ricardo@communitas.pe','2024-01-15','rcanales', '123', 3500,48,1,1,5),
-('Patricia','DÌaz','Soto','74563218','1993-09-14','Av. Primavera 1200','988777666','patricia@communitas.pe','2024-03-01','pdiaz', '123',2200,48,1,2,3),
+('Ricardo','Canales','L√≥pez','72589634','1995-02-10','Av. Canad√° 500','999111222','ricardo@communitas.pe','2024-01-15','rcanales', '123', 3500,48,1,1,5),
+('Patricia','D√≠az','Soto','74563218','1993-09-14','Av. Primavera 1200','988777666','patricia@communitas.pe','2024-03-01','pdiaz', '123',2200,48,1,2,3),
 ('Miguel','Rojas','Paredes','71236548','1998-06-21','Av. Arequipa 3500','977555444','mrojas@communitas.pe','2025-01-08','mrojas', '123',1900,48,1,3,2),
-('Daniela','GarcÌa','Cruz','75632149','1996-01-18','Av. San Borja Norte 410','966222111','dgarcia@communitas.pe','2023-11-10','dgarcia','123',2100,48,1,2,5),
-('Fernando','Salazar','LeÛn','73458961','1989-08-03','Av. Tom·s Marsano 2400','955444333','fsalazar@communitas.pe','2022-08-20','fsalazar','123',2400,48,1,1,4);
+('Daniela','Garc√≠a','Cruz','75632149','1996-01-18','Av. San Borja Norte 410','966222111','dgarcia@communitas.pe','2023-11-10','dgarcia','123',2100,48,1,2,5),
+('Fernando','Salazar','Le√≥n','73458961','1989-08-03','Av. Tom√°s Marsano 2400','955444333','fsalazar@communitas.pe','2022-08-20','fsalazar','123',2400,48,1,1,4);
 GO
 
 --autor
 INSERT INTO autor
 (nomautor, apepautor, apemautor, idpais)
 VALUES
-('Gabriel','GarcÌa','M·rquez',4),
+('Gabriel','Garc√≠a','M√°rquez',4),
 ('Robert','Martin','',6),
 ('Viktor','Frankl','',9),
 ('Yuval Noah','Harari','',10),
-('Antoine','de Saint-ExupÈry','',8),
+('Antoine','de Saint-Exup√©ry','',8),
 ('Frank','Herbert','',6),
 ('Brian','Kernighan','',11),
 ('Martin','Kleppmann','',7),
@@ -413,18 +415,18 @@ GO
 
 --producto
 INSERT INTO producto
-(isbnprod,titprod,preccompprod,precventprod,fecpubprod,idcategoria,ideditorial)
+(isbnprod, titprod, descprod, preccompprod, precventprod, fecpubprod, idprov, idcategoria, ideditorial)
 VALUES
-('9780307476463','Cien aÒos de soledad',45,69.90,'1967-05-30',1,2),
-('9780132350884','Clean Code',110,169.90,'2008-08-01',2,5),
-('9788449337478','El hombre en busca de sentido',38,59.90,'1946-01-01',3,1),
-('9788420471839','Sapiens: De animales a dioses',60,89.90,'2011-01-01',4,3),
-('9788498381498','El Principito',20,35.90,'1943-04-06',5,2),
-('9780553386790','Dune',55,82.90,'1965-08-01',6,2),
-('9780131103627','The C Programming Language',95,145.00,'1988-04-01',2,5),
-('9781492056355','Designing Data-Intensive Applications',150,229.90,'2017-03-16',2,5),
-('9780307887443','Thinking, Fast and Slow',48,72.90,'2011-10-25',3,2),
-('9788499890944','1984',32,49.90,'1949-06-08',1,1);
+('9780307476463','Cien a√±os de soledad','Novela ic√≥nica del realismo m√°gico escrita por Gabriel Garc√≠a M√°rquez.',45.00,69.90,'1967-05-30',1,1,2),
+('9780132350884','Clean Code','Gu√≠a de buenas pr√°cticas para escribir c√≥digo limpio y mantenible.',110.00,169.90,'2008-08-01',2,2,5),
+('9788449337478','El hombre en busca de sentido','Obra de Viktor Frankl sobre la b√∫squeda del sentido de la vida.',38.00,59.90,'1946-01-01',1,3,1),
+('9788420471839','Sapiens: De animales a dioses','Ensayo hist√≥rico sobre la evoluci√≥n y desarrollo de la humanidad.',60.00,89.90,'2011-01-01',2,4,3),
+('9788498381498','El Principito','Cl√°sico de la literatura universal escrito por Antoine de Saint-Exup√©ry.',20.00,35.90,'1943-04-06',1,5,2),
+('9780553386790','Dune','Novela de ciencia ficci√≥n considerada una de las mejores del g√©nero.',55.00,82.90,'1965-08-01',2,6,2),
+('9780131103627','The C Programming Language','Libro de referencia sobre el lenguaje de programaci√≥n C.',95.00,145.00,'1988-04-01',1,2,5),
+('9781492056355','Designing Data-Intensive Applications','Libro especializado en arquitectura y sistemas de datos.',150.00,229.90,'2017-03-16',2,2,5),
+('9780307887443','Thinking, Fast and Slow','Libro de psicolog√≠a y econom√≠a conductual de Daniel Kahneman.',48.00,72.90,'2011-10-25',1,3,2),
+('9788499890944','1984','Novela dist√≥pica escrita por George Orwell.',32.00,49.90,'1949-06-08',2,1,1);
 GO
 
 --libroAutor
