@@ -315,3 +315,21 @@ end
 go
 exec SP_CodigoEmpleado
 go
+
+--validar
+IF EXISTS(SELECT * FROM sys.procedures WHERE NAME = 'SP_ValidarEmpleado')
+DROP PROCEDURE SP_ValidarEmpleado
+go
+CREATE PROC SP_ValidarEmpleado
+@usuario varchar(100),
+@clave varchar(100)
+as
+begin
+select e.idemp, e.nomemp, e.apepemp, e.apememp, e.usuemp, r.idrol,
+r.nomrol, e.estemp
+from empleado e inner join rol r on e.idrol = r.idrol
+where e.usuemp=@usuario and e.claemp=@clave
+end
+go
+exec SP_ValidarEmpleado 'rcanales', '123'
+go
