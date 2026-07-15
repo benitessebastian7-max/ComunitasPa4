@@ -1,7 +1,0 @@
-<Solution>
-  <Project Path="../pe.com.comunitas.bal/pe.com.comunitas.bal.csproj" />
-  <Project Path="../pe.com.comunitas.bo/pe.com.comunitas.bo.csproj" />
-  <Project Path="../pe.com.comunitas.dal/pe.com.comunitas.dal.csproj" />
-  <Project Path="../pe.com.comunitas.inf/pe.com.comunitas.inf.csproj" />
-  <Project Path="../pe.com.muertelenta.ui/pe.com.comunitas.ui/pe.com.comunitas.ui.csproj" />
-</Solution>
