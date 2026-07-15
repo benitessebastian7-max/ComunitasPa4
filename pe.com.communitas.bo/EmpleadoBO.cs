@@ -16,6 +16,8 @@ namespace pe.com.communitas.bo
         public string telemp { get; set; }
         public string coremp { get; set; }
         public DateTime fecinemp { get; set; }
+        public string usuemp { get; set; }
+        public string claemp {get; set; }
         public decimal sueldoemp { get; set; }
         public int numhoremp { get; set; }
         public bool estemp { get; set; }
