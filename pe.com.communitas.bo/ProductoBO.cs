@@ -9,6 +9,7 @@ namespace pe.com.communitas.bo
         public int idprod { get; set; }
         public string isbnprod { get; set; }
         public string titprod { get; set; }
+        public string descprod {get; set; }
         public decimal preccompprod { get; set; }
         public decimal precventprod { get; set; }
         public DateTime fecpubprod { get; set; }
