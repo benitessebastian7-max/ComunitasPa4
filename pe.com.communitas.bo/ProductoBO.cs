@@ -16,6 +16,7 @@ namespace pe.com.communitas.bo
         public bool estprod { get; set; }
 
         // claves foraneas
+        public ProveedorBO proveedor { get; set; }
         public CategoriaBO categoria { get; set; }
         public EditorialBO editorial { get; set; }
     }
