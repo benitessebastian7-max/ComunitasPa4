@@ -184,6 +184,7 @@ from empleado e
 inner join tipodocumento td on e.idtipdoc=td.idtipdoc
 inner join rol r on e.idrol=r.idrol
 inner join distrito d on e.iddis=d.iddis
+where @codigo = e.idemp
 end
 go
 exec SP_BuscarEmpleadoXCodigo 1
