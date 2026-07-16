@@ -131,6 +131,7 @@ select
 from cliente c 
 inner join tipodocumento td on c.idtipdoc=td.idtipdoc
 inner join distrito d on c.iddis=d.iddis
+where @codigo = c.idcli
 end
 go
 exec SP_BuscarClienteXCodigo 1
