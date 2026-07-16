@@ -156,7 +156,7 @@ as
 begin
 begin tran SP_HabilitarLibroAutor
 begin try
-update libroautor set estlibroautor=0 where idlibroautor=@codigo
+update libroautor set estlibroautor=1 where idlibroautor=@codigo
 commit tran SP_HabilitarLibroAutor
 end try
 begin catch
