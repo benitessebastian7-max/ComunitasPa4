@@ -1,7 +1,0 @@
-<Solution>
-  <Project Path="pe.com.muertelenta.bal/pe.com.communitas.bal.csproj" Id="c3b19f27-d5e9-48bc-9d52-a7df21ef99e5" />
-  <Project Path="pe.com.muertelenta.bo/pe.com.communitas.bo.csproj" Id="b93bf343-9582-4b5d-9344-89a09e9c67f0" />
-  <Project Path="pe.com.muertelenta.dal/pe.com.communitas.dal.csproj" Id="a18496cc-3947-43f2-85c6-152650475f45" />
-  <Project Path="pe.com.muertelenta.inf/pe.com.communitas.inf.csproj" Id="4b4cc95b-c9e9-4c82-8d66-74aec9d105af" />
-  <Project Path="pe.com.muertelenta.ui/pe.com.communitas.ui.csproj" Id="bc68d485-7cad-4fd1-84c6-99054e7d0e52" />
-</Solution>
