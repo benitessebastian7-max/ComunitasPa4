@@ -1,0 +1,266 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BC68D485-7CAD-4FD1-84C6-99054E7D0E52}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>pe.com.muertelenta.ui</RootNamespace>
+    <AssemblyName>pe.com.muertelenta.ui</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44311</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Autor\FormAutor.aspx" />
+    <Content Include="Autor\FormHabilitarAutor.aspx" />
+    <Content Include="Categoria\FormCategoria.aspx" />
+    <Content Include="Categoria\FormHabilitarCategoria.aspx" />
+    <Content Include="Cliente\FormCliente.aspx" />
+    <Content Include="Cliente\FormHabilitarCliente.aspx" />
+    <Content Include="Editorial\FormEditorial.aspx" />
+    <Content Include="Editorial\FormHabilitarEditorial.aspx" />
+    <Content Include="empleado\FormEmpleado.aspx" />
+    <Content Include="empleado\FormHabilitarEmpleado.aspx" />
+    <Content Include="FormMenuPrincipal.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="index.aspx" />
+    <Content Include="Producto\FormHabilitarProducto.aspx" />
+    <Content Include="Producto\FormProducto.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Autor\FormAutor.aspx.cs">
+      <DependentUpon>FormAutor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Autor\FormAutor.aspx.designer.cs">
+      <DependentUpon>FormAutor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Autor\FormHabilitarAutor.aspx.cs">
+      <DependentUpon>FormHabilitarAutor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Autor\FormHabilitarAutor.aspx.designer.cs">
+      <DependentUpon>FormHabilitarAutor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Categoria\FormCategoria.aspx.cs">
+      <DependentUpon>FormCategoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Categoria\FormCategoria.aspx.designer.cs">
+      <DependentUpon>FormCategoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Categoria\FormHabilitarCategoria.aspx.cs">
+      <DependentUpon>FormHabilitarCategoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Categoria\FormHabilitarCategoria.aspx.designer.cs">
+      <DependentUpon>FormHabilitarCategoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\FormCliente.aspx.cs">
+      <DependentUpon>FormCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cliente\FormCliente.aspx.designer.cs">
+      <DependentUpon>FormCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\FormHabilitarCliente.aspx.cs">
+      <DependentUpon>FormHabilitarCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cliente\FormHabilitarCliente.aspx.designer.cs">
+      <DependentUpon>FormHabilitarCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Editorial\FormEditorial.aspx.cs">
+      <DependentUpon>FormEditorial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Editorial\FormEditorial.aspx.designer.cs">
+      <DependentUpon>FormEditorial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Editorial\FormHabilitarEditorial.aspx.cs">
+      <DependentUpon>FormHabilitarEditorial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Editorial\FormHabilitarEditorial.aspx.designer.cs">
+      <DependentUpon>FormHabilitarEditorial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="empleado\FormEmpleado.aspx.cs">
+      <DependentUpon>FormEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="empleado\FormEmpleado.aspx.designer.cs">
+      <DependentUpon>FormEmpleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="empleado\FormHabilitarEmpleado.aspx.cs">
+      <DependentUpon>FormHabilitarEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="empleado\FormHabilitarEmpleado.aspx.designer.cs">
+      <DependentUpon>FormHabilitarEmpleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormMenuPrincipal.aspx.cs">
+      <DependentUpon>FormMenuPrincipal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormMenuPrincipal.aspx.designer.cs">
+      <DependentUpon>FormMenuPrincipal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Producto\FormHabilitarProducto.aspx.cs">
+      <DependentUpon>FormHabilitarProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Producto\FormHabilitarProducto.aspx.designer.cs">
+      <DependentUpon>FormHabilitarProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Producto\FormProducto.aspx.cs">
+      <DependentUpon>FormProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Producto\FormProducto.aspx.designer.cs">
+      <DependentUpon>FormProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="templates\Plantilla.Master.cs">
+      <DependentUpon>Plantilla.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="templates\Plantilla.Master.designer.cs">
+      <DependentUpon>Plantilla.Master</DependentUpon>
+    </Compile>
+    <Compile Include="util\Util.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="templates\Plantilla.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="img\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\pe.com.muertelenta.bal\pe.com.communitas.bal.csproj">
+      <Project>{C3B19F27-D5E9-48BC-9D52-A7DF21EF99E5}</Project>
+      <Name>pe.com.communitas.bal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\pe.com.muertelenta.bo\pe.com.communitas.bo.csproj">
+      <Project>{B93BF343-9582-4B5D-9344-89A09E9C67F0}</Project>
+      <Name>pe.com.communitas.bo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\pe.com.muertelenta.dal\pe.com.communitas.dal.csproj">
+      <Project>{A18496CC-3947-43F2-85C6-152650475F45}</Project>
+      <Name>pe.com.communitas.dal</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56701</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44311/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+</Project>
