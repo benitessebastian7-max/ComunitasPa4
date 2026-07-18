@@ -1,0 +1,6 @@
+C:\Laboratorios_prog\Lab_4\MuerteLentaWeb\pe.com.muertelenta.inf\bin\Debug\pe.com.muertelenta.inf.dll
+C:\Laboratorios_prog\Lab_4\MuerteLentaWeb\pe.com.muertelenta.inf\bin\Debug\pe.com.muertelenta.inf.pdb
+C:\Laboratorios_prog\Lab_4\MuerteLentaWeb\pe.com.muertelenta.inf\obj\Debug\pe.com.muertelenta.inf.csproj.AssemblyReference.cache
+C:\Laboratorios_prog\Lab_4\MuerteLentaWeb\pe.com.muertelenta.inf\obj\Debug\pe.com.muertelenta.inf.csproj.CoreCompileInputs.cache
+C:\Laboratorios_prog\Lab_4\MuerteLentaWeb\pe.com.muertelenta.inf\obj\Debug\pe.com.muertelenta.inf.dll
+C:\Laboratorios_prog\Lab_4\MuerteLentaWeb\pe.com.muertelenta.inf\obj\Debug\pe.com.muertelenta.inf.pdb
