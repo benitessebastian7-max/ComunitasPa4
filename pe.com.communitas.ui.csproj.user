@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="Autor\frmAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Autor\frmHabilitarAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Categoria\frmCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Categoria\frmHabilitarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Cliente\frmCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Cliente\frmHabilitarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Compra\frmCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Compra\frmHabilitarCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DetalleCompra\frmDetalleCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DetalleCompra\frmHabilitarDetalleCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DetalleVenta\frmDetalleVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DetalleVenta\frmHabilitarDetalleVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Distrito\frmDistrito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Distrito\frmHabilitarDistrito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Editorial\frmEditorial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Editorial\frmHabilitarEditorial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Empleado\frmEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Empleado\frmHabilitarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Inventario\frmHabilitarInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Inventario\frmInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="LibroAutor\frmHabilitarLibroAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="LibroAutor\frmLibroAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pais\frmHabilitarPais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pais\frmPais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Producto\frmHabilitarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Producto\frmProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Proveedor\frmHabilitarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Proveedor\frmProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Rol\frmHabilitarRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Rol\frmRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TipoDocumento\frmHabilitarTipoDocumento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TipoDocumento\frmTipoDocumento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TipoPago\frmHabilitarTipoPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TipoPago\frmTipoPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Venta\frmHabilitarVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Venta\frmVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
