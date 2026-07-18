@@ -1,0 +1,20 @@
+C:\Laboratorios_prog\Lab_4\MuerteLentaWeb\pe.com.muertelenta.dal\bin\Debug\pe.com.muertelenta.dal.dll
+C:\Laboratorios_prog\Lab_4\MuerteLentaWeb\pe.com.muertelenta.dal\bin\Debug\pe.com.muertelenta.dal.pdb
+C:\Laboratorios_prog\Lab_4\MuerteLentaWeb\pe.com.muertelenta.dal\bin\Debug\pe.com.muertelenta.bo.dll
+C:\Laboratorios_prog\Lab_4\MuerteLentaWeb\pe.com.muertelenta.dal\bin\Debug\pe.com.muertelenta.bo.pdb
+C:\Laboratorios_prog\Lab_4\MuerteLentaWeb\pe.com.muertelenta.dal\obj\Debug\pe.com.muertelenta.dal.csproj.AssemblyReference.cache
+C:\Laboratorios_prog\Lab_4\MuerteLentaWeb\pe.com.muertelenta.dal\obj\Debug\pe.com.muertelenta.dal.csproj.CoreCompileInputs.cache
+C:\Laboratorios_prog\Lab_4\MuerteLentaWeb\pe.com.muertelenta.dal\obj\Debug\pe.com.m.403EB5A1.Up2Date
+C:\Laboratorios_prog\Lab_4\MuerteLentaWeb\pe.com.muertelenta.dal\obj\Debug\pe.com.muertelenta.dal.dll
+C:\Laboratorios_prog\Lab_4\MuerteLentaWeb\pe.com.muertelenta.dal\obj\Debug\pe.com.muertelenta.dal.pdb
+C:\Laboratorios_prog\Lab_4\MuerteLentaWeb\pe.com.muertelenta.dal\bin\Debug\pe.com.muertelenta.dal.dll.config
+C:\Laboratorios_prog\Lab_4 - copia\MuerteLentaWeb\pe.com.muertelenta.dal\bin\Debug\pe.com.muertelenta.dal.dll.config
+C:\Laboratorios_prog\Lab_4 - copia\MuerteLentaWeb\pe.com.muertelenta.dal\bin\Debug\pe.com.muertelenta.dal.dll
+C:\Laboratorios_prog\Lab_4 - copia\MuerteLentaWeb\pe.com.muertelenta.dal\bin\Debug\pe.com.muertelenta.dal.pdb
+C:\Laboratorios_prog\Lab_4 - copia\MuerteLentaWeb\pe.com.muertelenta.dal\bin\Debug\pe.com.muertelenta.bo.dll
+C:\Laboratorios_prog\Lab_4 - copia\MuerteLentaWeb\pe.com.muertelenta.dal\bin\Debug\pe.com.muertelenta.bo.pdb
+C:\Laboratorios_prog\Lab_4 - copia\MuerteLentaWeb\pe.com.muertelenta.dal\obj\Debug\pe.com.muertelenta.dal.csproj.AssemblyReference.cache
+C:\Laboratorios_prog\Lab_4 - copia\MuerteLentaWeb\pe.com.muertelenta.dal\obj\Debug\pe.com.muertelenta.dal.csproj.CoreCompileInputs.cache
+C:\Laboratorios_prog\Lab_4 - copia\MuerteLentaWeb\pe.com.muertelenta.dal\obj\Debug\pe.com.m.403EB5A1.Up2Date
+C:\Laboratorios_prog\Lab_4 - copia\MuerteLentaWeb\pe.com.muertelenta.dal\obj\Debug\pe.com.muertelenta.dal.dll
+C:\Laboratorios_prog\Lab_4 - copia\MuerteLentaWeb\pe.com.muertelenta.dal\obj\Debug\pe.com.muertelenta.dal.pdb
