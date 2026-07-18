@@ -1,0 +1,13 @@
+C:\Laboratorios_prog\Lab_4 - copia\MuerteLentaWeb\pe.com.muertelenta.bal\bin\Debug\pe.com.muertelenta.bal.dll.config
+C:\Laboratorios_prog\Lab_4 - copia\MuerteLentaWeb\pe.com.muertelenta.bal\bin\Debug\pe.com.muertelenta.bal.dll
+C:\Laboratorios_prog\Lab_4 - copia\MuerteLentaWeb\pe.com.muertelenta.bal\bin\Debug\pe.com.muertelenta.bal.pdb
+C:\Laboratorios_prog\Lab_4 - copia\MuerteLentaWeb\pe.com.muertelenta.bal\bin\Debug\pe.com.muertelenta.bo.dll
+C:\Laboratorios_prog\Lab_4 - copia\MuerteLentaWeb\pe.com.muertelenta.bal\bin\Debug\pe.com.muertelenta.dal.dll
+C:\Laboratorios_prog\Lab_4 - copia\MuerteLentaWeb\pe.com.muertelenta.bal\bin\Debug\pe.com.muertelenta.bo.pdb
+C:\Laboratorios_prog\Lab_4 - copia\MuerteLentaWeb\pe.com.muertelenta.bal\bin\Debug\pe.com.muertelenta.dal.pdb
+C:\Laboratorios_prog\Lab_4 - copia\MuerteLentaWeb\pe.com.muertelenta.bal\bin\Debug\pe.com.muertelenta.dal.dll.config
+C:\Laboratorios_prog\Lab_4 - copia\MuerteLentaWeb\pe.com.muertelenta.bal\obj\Debug\pe.com.communitas.bal.csproj.AssemblyReference.cache
+C:\Laboratorios_prog\Lab_4 - copia\MuerteLentaWeb\pe.com.muertelenta.bal\obj\Debug\pe.com.communitas.bal.csproj.CoreCompileInputs.cache
+C:\Laboratorios_prog\Lab_4 - copia\MuerteLentaWeb\pe.com.muertelenta.bal\obj\Debug\pe.com.c.7F918C49.Up2Date
+C:\Laboratorios_prog\Lab_4 - copia\MuerteLentaWeb\pe.com.muertelenta.bal\obj\Debug\pe.com.muertelenta.bal.dll
+C:\Laboratorios_prog\Lab_4 - copia\MuerteLentaWeb\pe.com.muertelenta.bal\obj\Debug\pe.com.muertelenta.bal.pdb
