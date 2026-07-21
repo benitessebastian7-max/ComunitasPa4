@@ -30,24 +30,29 @@ exec SP_MostrarEditorialTodo
 go
 
 -- Registrar
-IF EXISTS(SELECT * FROM sys.procedures WHERE NAME='SP_RegistrarEditorial') 
-DROP PROCEDURE SP_RegistrarEditorial  
-go
-CREATE PROC	SP_RegistrarEditorial
-@nombre varchar(100),
-@estado bit
-as
-begin
-begin tran SP_RegistrarEditorial
-begin try
-insert into categoria values(@nombre,@estado)
-commit tran SP_RegistrarEditorial
-end try
-begin catch
-	rollback tran SP_RegistrarEditorial
-end catch
-end
-go
+IF EXISTS(SELECT * FROM sys.procedures WHERE NAME='SP_RegistrarEditorial')  
+DROP PROCEDURE SP_RegistrarEditorial
+GO
+
+CREATE PROC SP_RegistrarEditorial
+@nombre VARCHAR(100),
+@estado BIT
+AS
+BEGIN
+    BEGIN TRAN SP_RegistrarEditorial
+    BEGIN TRY
+        INSERT INTO editorial
+            (nomeditorial, esteditorial)
+        VALUES
+            (@nombre, @estado)
+
+        COMMIT TRAN SP_RegistrarEditorial
+    END TRY
+    BEGIN CATCH
+        ROLLBACK TRAN SP_RegistrarEditorial
+    END CATCH
+END
+GO
 
 
 -- Buscar
