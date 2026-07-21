@@ -17,17 +17,22 @@ exec SP_MostrarCategoria
 go
 
 -- Mostrar Todo
-IF EXISTS(SELECT * FROM sys.procedures WHERE NAME='SP_MostrarCategoria') 
-DROP PROCEDURE SP_MostrarCategoria  
-go
-CREATE PROC	SP_MostrarCategoria
-as
-begin
-select * from categoria
-end
-go
-exec SP_MostrarCategoria
-go
+IF EXISTS(SELECT * FROM sys.procedures WHERE NAME='SP_MostrarCategoriaTodo') 
+DROP PROCEDURE SP_MostrarCategoriaTodo
+GO
+
+CREATE PROC SP_MostrarCategoriaTodo
+AS
+BEGIN
+    SELECT 
+        idcategoria,
+        nomcategoria,
+        estcategoria
+    FROM categoria
+END
+GO
+EXEC SP_MostrarCategoriaTodo
+GO
 
 -- Registrar
 IF EXISTS(SELECT * FROM sys.procedures WHERE NAME='SP_RegistrarCategoria') 
