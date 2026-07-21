@@ -149,21 +149,25 @@ go
 -- habilitar 
 IF EXISTS(SELECT * FROM sys.procedures WHERE NAME='SP_HabilitarLibroAutor') 
 DROP PROCEDURE SP_HabilitarLibroAutor
-go
-CREATE PROC	SP_HabilitarLibroAutor
+GO
+
+CREATE PROC SP_HabilitarLibroAutor
 @codigo int
-as
-begin
-begin tran SP_HabilitarLibroAutor
-begin try
-update libroautor set estlibroautor=0 where idlibroautor=@codigo
-commit tran SP_HabilitarLibroAutor
-end try
-begin catch
-	rollback tran SP_HabilitarLibroAutor
-end catch
-end
-go
+AS
+BEGIN
+    BEGIN TRAN SP_HabilitarLibroAutor
+    BEGIN TRY
+        UPDATE libroautor 
+        SET estlibroautor = 1 
+        WHERE idlibroautor = @codigo
+
+        COMMIT TRAN SP_HabilitarLibroAutor
+    END TRY
+    BEGIN CATCH
+        ROLLBACK TRAN SP_HabilitarLibroAutor
+    END CATCH
+END
+GO
 
 -- siguiente codigo
 IF EXISTS(SELECT * FROM sys.procedures WHERE NAME='SP_CodigoLibroAutor') 
