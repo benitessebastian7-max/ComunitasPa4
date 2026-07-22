@@ -3,200 +3,216 @@ use EI5447CommunitasBD
 go
 
 -- compra
--- Mostrar 
-IF EXISTS(SELECT * FROM sys.procedures WHERE NAME='SP_MostrarCompra') 
-DROP PROCEDURE SP_MostrarCompra
-go
-CREATE PROC	SP_MostrarCompra
-as
-begin
-select
-	c.idcompra,
-	c.feccompra,
-	c.totalcompra,
-	c.estcompra,
-	c.idprov,
-	p.razsocprov
-from compra c
-inner join proveedor p on c.idprov=p.idprov
-where c.estcompra= 1
-end
-go
-exec SP_MostrarCompra
-go
-
--- Mostrar Todos
-IF EXISTS(SELECT * FROM sys.procedures WHERE NAME='SP_MostrarCompraTodo') 
-DROP PROCEDURE SP_MostrarCompraTodo
-go
-CREATE PROC	SP_MostrarCompraTodo
-as
-begin
-select
-	c.idcompra,
-	c.feccompra,
-	c.totalcompra,
-	c.estcompra,
-	c.idprov,
-	p.razsocprov
-from compra c
-inner join proveedor p on c.idprov=p.idprov
-end
-go
-exec SP_MostrarCompraTodo
-go
-
--- Registrar
-IF EXISTS(SELECT * FROM sys.procedures WHERE NAME='SP_RegistrarCompra') 
+-- Registrar Compra
+IF EXISTS (SELECT * FROM sys.procedures WHERE NAME = 'SP_RegistrarCompra')
 DROP PROCEDURE SP_RegistrarCompra
-go
-CREATE PROC	SP_RegistrarCompra
-	@fechacompra DATETIME,
+GO
+
+CREATE PROC SP_RegistrarCompra
+    @idprov INT,
     @total MONEY,
     @estado BIT,
-	@idprov INT
-as
-begin
-	begin tran SP_RegistrarCompra
-	begin try
-		insert into compra
-				(feccompra,
-				totalcompra,
-				estcompra,
-				idprov)
-		values(
-			@fechacompra,
-			@total,
-			@estado,
-			@idprov)
-		commit tran SP_RegistrarCompra
-	end try
-	begin catch
-		rollback tran SP_RegistrarCompra
-	end catch
-end
-go
+    @idcompra INT OUTPUT
+AS
+BEGIN
+    INSERT INTO compra
+        (feccompra,
+         totalcompra,
+         estcompra,
+         idprov)
+    VALUES
+        (GETDATE(),
+         @total,
+         @estado,
+         @idprov)
 
--- Buscar por codigo
-IF EXISTS(SELECT * FROM sys.procedures WHERE NAME='SP_BuscarCompraXCodigo') 
-DROP PROCEDURE SP_BuscarCompraXCodigo
-go
-CREATE PROC	SP_BuscarCompraXCodigo
-@codigo int
-as
-begin
-select 
-	c.idcompra,
-	c.feccompra,
-	c.totalcompra,
-	c.estcompra,
-	c.idprov,
-	p.razsocprov
-from compra c
-inner join proveedor p on c.idprov=p.idprov
-where c.idcompra = @codigo
-end
-go
-exec SP_BuscarCompraXCodigo 3
-go
+    SET @idcompra = SCOPE_IDENTITY()
+END
+GO
 
--- Actualizar 
-IF EXISTS(SELECT * FROM sys.procedures WHERE NAME='SP_ActualizarCompra') 
-DROP PROCEDURE SP_ActualizarCompra
-go
-CREATE PROC	SP_ActualizarCompra
-	@codigo int,
-    @feccomp DATETIME,
-	@total MONEY,
-    @estado BIT,
-	@idprov INT
-as
-begin
-	begin tran SP_ActualizarCompra
-	begin try
-		update compra
-		set 			
-			feccompra=@feccomp,
-			totalcompra=@total,
-			estcompra=@estado,
-			idprov=@idprov
-			where idcompra=@codigo
-			commit tran SP_ActualizarCompra
-	end try
-	begin catch
-		rollback tran SP_ActualizarCompra
-	end catch
-end
-go
 
--- Eliminar 
-IF EXISTS(SELECT * FROM sys.procedures WHERE NAME='SP_EliminarCompra') 
-DROP PROCEDURE SP_EliminarCompra
-go
-CREATE PROC	SP_EliminarCompra
-@codigo int
-as
-begin
-begin tran SP_EliminarCompra
-begin try
-update compra set estcompra=0 where idcompra=@codigo
-commit tran SP_EliminarCompra
-end try
-begin catch
-	rollback tran SP_EliminarCompra
-end catch
-end
-go
+-- Registrar Detalle Compra
+IF EXISTS (SELECT * FROM sys.procedures WHERE NAME = 'SP_RegistrarDetalleCompra')
+DROP PROCEDURE SP_RegistrarDetalleCompra
+GO
 
--- habilitar 
-IF EXISTS(SELECT * FROM sys.procedures WHERE NAME='SP_HabilitarCompra') 
-DROP PROCEDURE SP_HabilitarCompra
-go
-CREATE PROC	SP_HabilitarCompra
-@codigo int
-as
-begin
-begin tran SP_HabilitarCompra
-begin try
-update compra set estcompra=1 where idcompra=@codigo
-commit tran SP_HabilitarCompra
-end try
-begin catch
-	rollback tran SP_HabilitarCompra
-end catch
-end
-go
+CREATE PROC SP_RegistrarDetalleCompra
+    @idcompra INT,
+    @idprod INT,
+    @cantidad INT,
+    @precio MONEY
+AS
+BEGIN
+    INSERT INTO detallecompra
+        (idcompra,
+         idprod,
+         cancompra,
+         precucomp,
+         subtotcomp)
+    VALUES
+        (@idcompra,
+         @idprod,
+         @cantidad,
+         @precio,
+         @cantidad * @precio)
+END
+GO
 
--- siguiente codigo
-IF EXISTS(SELECT * FROM sys.procedures WHERE NAME='SP_CodigoCompra') 
+
+-- Siguiente Codigo Compra
+IF EXISTS (SELECT * FROM sys.procedures WHERE NAME = 'SP_CodigoCompra')
 DROP PROCEDURE SP_CodigoCompra
-go
-CREATE PROC	SP_CodigoCompra
-as
-begin
-declare @siguientecodigo int
-declare @valoractual int
--- si la tabla esta vacia
-if not exists (select 1 from compra)
-begin
-set @siguientecodigo=1
-end
-else
-begin
--- obtener el proximo valor del identity
-select @siguientecodigo=IDENT_CURRENT('compra')+1
+GO
 
--- comprobando que el identity es correcto
-dbcc checkident ('compra',noreseed) with no_infomsgs
-select @valoractual=IDENT_CURRENT('compra')+1
+CREATE PROC SP_CodigoCompra
+AS
+BEGIN
+    DECLARE @siguientecodigo INT
+    DECLARE @valoractual INT
 
--- verificamos los valores
-if @valoractual>@siguientecodigo
-set @siguientecodigo=@valoractual
-end
--- retornamos el resultado
-select @siguientecodigo as SiguienteCodigo
-end
-go
-exec SP_CodigoCompra
-go
+    IF NOT EXISTS (SELECT 1 FROM compra)
+    BEGIN
+        SET @siguientecodigo = 1
+    END
+    ELSE
+    BEGIN
+        SELECT @siguientecodigo = IDENT_CURRENT('compra') + 1
+
+        DBCC CHECKIDENT ('compra', NORESEED) WITH NO_INFOMSGS
+
+        SELECT @valoractual = IDENT_CURRENT('compra') + 1
+
+        IF @valoractual > @siguientecodigo
+            SET @siguientecodigo = @valoractual
+    END
+
+    SELECT @siguientecodigo AS SiguienteCodigo
+END
+GO
+
+
+-- Mostrar Compra Detalle
+IF EXISTS (SELECT * FROM sys.procedures WHERE NAME = 'SP_MostrarCompraDetalle')
+DROP PROCEDURE SP_MostrarCompraDetalle
+GO
+
+CREATE PROC SP_MostrarCompraDetalle
+AS
+BEGIN
+    SELECT
+        c.idcompra,
+        c.feccompra,
+        p.razsocprov,
+        p.rucprov,
+        c.estcompra,
+        SUM(dc.subtotcomp) AS Subtotal
+    FROM compra c
+        INNER JOIN proveedor p
+            ON c.idprov = p.idprov
+        INNER JOIN detallecompra dc
+            ON c.idcompra = dc.idcompra
+    GROUP BY
+        c.idcompra,
+        c.feccompra,
+        p.razsocprov,
+        p.rucprov,
+        c.estcompra
+END
+GO
+
+
+-- Mostrar Compra
+IF EXISTS (SELECT * FROM sys.procedures WHERE NAME = 'SP_MostrarCompra')
+DROP PROCEDURE SP_MostrarCompra
+GO
+
+CREATE PROC SP_MostrarCompra
+AS
+BEGIN
+    SELECT
+        c.idcompra,
+        c.feccompra,
+        p.razsocprov,
+        p.rucprov,
+        c.estcompra
+    FROM compra c
+        INNER JOIN proveedor p
+            ON c.idprov = p.idprov
+END
+GO
+
+
+-- Mostrar Detalle Compra
+IF EXISTS (SELECT * FROM sys.procedures WHERE NAME = 'SP_MostrarDetalleCompra')
+DROP PROCEDURE SP_MostrarDetalleCompra
+GO
+
+CREATE PROC SP_MostrarDetalleCompra
+    @codigo INT
+AS
+BEGIN
+    SELECT
+        dc.idcompra,
+        p.idprod,
+        p.titprod,
+        dc.precucomp,
+        dc.cancompra,
+        dc.subtotcomp
+    FROM detallecompra dc
+        INNER JOIN producto p
+            ON dc.idprod = p.idprod
+    WHERE dc.idcompra = @codigo
+END
+GO
+
+
+-- Anular Compra
+IF EXISTS (SELECT * FROM sys.procedures WHERE NAME = 'SP_AnularCompra')
+DROP PROCEDURE SP_AnularCompra
+GO
+
+CREATE PROC SP_AnularCompra
+    @codigo INT
+AS
+BEGIN
+    BEGIN TRAN SP_AnularCompra
+
+    BEGIN TRY
+        UPDATE compra
+        SET estcompra = 0
+        WHERE idcompra = @codigo
+
+        COMMIT TRAN SP_AnularCompra
+    END TRY
+
+    BEGIN CATCH
+        ROLLBACK TRAN SP_AnularCompra
+    END CATCH
+END
+GO
+
+
+-- Habilitar Compra
+IF EXISTS (SELECT * FROM sys.procedures WHERE NAME = 'SP_HabilitarCompra')
+DROP PROCEDURE SP_HabilitarCompra
+GO
+
+CREATE PROC SP_HabilitarCompra
+    @codigo INT
+AS
+BEGIN
+    BEGIN TRAN SP_HabilitarCompra
+
+    BEGIN TRY
+        UPDATE compra
+        SET estcompra = 1
+        WHERE idcompra = @codigo
+
+        COMMIT TRAN SP_HabilitarCompra
+    END TRY
+
+    BEGIN CATCH
+        ROLLBACK TRAN SP_HabilitarCompra
+    END CATCH
+END
+GO
