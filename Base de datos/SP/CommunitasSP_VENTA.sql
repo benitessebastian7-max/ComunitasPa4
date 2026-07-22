@@ -3,228 +3,245 @@ use EI5447CommunitasBD
 go
 
 -- venta
--- Mostrar 
-IF EXISTS(SELECT * FROM sys.procedures WHERE NAME='SP_MostrarVenta') 
-DROP PROCEDURE SP_MostrarVenta
-go
-CREATE PROC	SP_MostrarVenta
-as
-begin
-select
-	v.idventa,
-	v.fecventa,
-	v.totalventa,
-	v.estventa,
-	v.idemp,
-	v.idcli,
-	v.idtippag,
-	e.nomemp,
-	c.nomcli,
-	tp.nomtippag
-from venta v
-inner join empleado e on v.idemp=e.idemp
-inner join cliente c on v.idcli=c.idcli
-inner join tipopago tp on v.idtippag=tp.idtippag
-where v.estventa= 1
-end
-go
-exec SP_MostrarVenta
-go
-
--- Mostrar Todos
-IF EXISTS(SELECT * FROM sys.procedures WHERE NAME='SP_MostrarVentaTodo') 
-DROP PROCEDURE SP_MostrarVentaTodo
-go
-CREATE PROC	SP_MostrarVentaTodo
-as
-begin
-select
-	v.idventa,
-	v.fecventa,
-	v.totalventa,
-	v.estventa,
-	v.idemp,
-	v.idcli,
-	v.idtippag,
-	e.nomemp,
-	c.nomcli,
-	tp.nomtippag
-from venta v
-inner join empleado e on v.idemp=e.idemp
-inner join cliente c on v.idcli=c.idcli
-inner join tipopago tp on v.idtippag=tp.idtippag
-end
-go
-exec SP_MostrarVentaTodo
-go
-
--- Registrar
-IF EXISTS(SELECT * FROM sys.procedures WHERE NAME='SP_RegistrarVenta') 
+-- Registrar Venta
+IF EXISTS (SELECT * FROM sys.procedures WHERE NAME = 'SP_RegistrarVenta')
 DROP PROCEDURE SP_RegistrarVenta
-go
-CREATE PROC	SP_RegistrarVenta
-	@fecha DATETIME, 
-	@total MONEY,
-	@estado BIT,
-	@idemp int,
-	@idcli int,
-	@idtippag int
-as
-begin
-	begin tran SP_RegistrarVenta
-	begin try
-		insert into venta
-				(fecventa,
-				totalventa,
-				estventa,
-				idemp,
-				idcli,
-				idtippag)
-		values(
-				@fecha, 
-				@total,
-				@estado,
-				@idemp,
-				@idcli,
-				@idtippag)
-		commit tran SP_RegistrarVenta
-	end try
-	begin catch
-		rollback tran SP_RegistrarVenta
-	end catch
-end
-go
+GO
 
--- Buscar por codigo
-IF EXISTS(SELECT * FROM sys.procedures WHERE NAME='SP_BuscarVentaXCodigo') 
-DROP PROCEDURE SP_BuscarVentaXCodigo
-go
-CREATE PROC	SP_BuscarVentaXCodigo
-@codigo int
-as
-begin
-select 
-	v.idventa,
-	v.fecventa,
-	v.totalventa,
-	v.estventa,
-	v.idemp,
-	v.idcli,
-	v.idtippag,
-	e.nomemp,
-	c.nomcli,
-	tp.nomtippag
-from venta v
-inner join empleado e on v.idemp=e.idemp
-inner join cliente c on v.idcli=c.idcli
-inner join tipopago tp on v.idtippag=tp.idtippag
-where v.idventa = @codigo
-end
-go
-exec SP_BuscarVentaXCodigo 5
-go
+CREATE PROC SP_RegistrarVenta
+    @idcli INT,
+    @idemp INT,
+    @idtippag INT,
+    @total MONEY,
+    @estado BIT,
+    @idventa INT OUTPUT
+AS
+BEGIN
+    INSERT INTO venta
+        (fecventa,
+         totalventa,
+         estventa,
+         idcli,
+         idemp,
+         idtippag)
+    VALUES
+        (GETDATE(),
+         @total,
+         @estado,
+         @idcli,
+         @idemp,
+         @idtippag)
 
--- Actualizar 
-IF EXISTS(SELECT * FROM sys.procedures WHERE NAME='SP_ActualizarVenta') 
-DROP PROCEDURE SP_ActualizarVenta
-go
-CREATE PROC	SP_ActualizarVenta
-	@codigo int,
-	@fecha DATETIME, 
-	@total MONEY,
-	@estado BIT,
-	@idemp int,
-	@idcli int,
-	@idtippag int
-as
-begin
-	begin tran SP_ActualizarVenta
-	begin try
-		update venta
-		set 			
-			fecventa = @fecha,
-			totalventa = @total,
-			estventa = @estado,
-			idemp = @idemp,
-			idcli = @idcli,
-			idtippag = @idtippag
-		where idventa = @codigo
-		commit tran SP_ActualizarVenta
-	end try
-	begin catch
-		rollback tran SP_ActualizarVenta
-	end catch
-end
-go
+    SET @idventa = SCOPE_IDENTITY()
+END
+GO
 
--- Eliminar 
-IF EXISTS(SELECT * FROM sys.procedures WHERE NAME='SP_EliminarVenta') 
-DROP PROCEDURE SP_EliminarVenta
-go
-CREATE PROC	SP_EliminarVenta
-@codigo int
-as
-begin
-begin tran SP_EliminarVenta
-begin try
-update venta set estventa=0 where idventa=@codigo
-commit tran SP_EliminarVenta
-end try
-begin catch
-	rollback tran SP_EliminarVenta
-end catch
-end
-go
 
--- habilitar 
-IF EXISTS(SELECT * FROM sys.procedures WHERE NAME='SP_HabilitarVenta') 
-DROP PROCEDURE SP_HabilitarVenta
-go
-CREATE PROC	SP_HabilitarVenta
-@codigo int
-as
-begin
-begin tran SP_HabilitarVenta
-begin try
-update venta set estventa=1 where idventa=@codigo
-commit tran SP_HabilitarVenta
-end try
-begin catch
-	rollback tran SP_HabilitarVenta
-end catch
-end
-go
+-- Registrar Detalle Venta
+IF EXISTS (SELECT * FROM sys.procedures WHERE NAME = 'SP_RegistrarDetalleVenta')
+DROP PROCEDURE SP_RegistrarDetalleVenta
+GO
 
--- siguiente codigo
-IF EXISTS(SELECT * FROM sys.procedures WHERE NAME='SP_CodigoVenta') 
+CREATE PROC SP_RegistrarDetalleVenta
+    @idventa INT,
+    @idprod INT,
+    @cantidad INT,
+    @precio MONEY
+AS
+BEGIN
+    INSERT INTO detalleventa
+        (idventa,
+         idprod,
+         canventa,
+         precuventa,
+         subtotventa)
+    VALUES
+        (@idventa,
+         @idprod,
+         @cantidad,
+         @precio,
+         @cantidad * @precio)
+END
+GO
+
+
+-- Siguiente Codigo Venta
+IF EXISTS (SELECT * FROM sys.procedures WHERE NAME = 'SP_CodigoVenta')
 DROP PROCEDURE SP_CodigoVenta
-go
-CREATE PROC	SP_CodigoVenta
-as
-begin
-declare @siguientecodigo int
-declare @valoractual int
--- si la tabla esta vacia
-if not exists (select 1 from venta)
-begin
-set @siguientecodigo=1
-end
-else
-begin
--- obtener el proximo valor del identity
-select @siguientecodigo=IDENT_CURRENT('venta')+1
+GO
 
--- comprobando que el identity es correcto
-dbcc checkident ('venta',noreseed) with no_infomsgs
-select @valoractual=IDENT_CURRENT('venta')+1
+CREATE PROC SP_CodigoVenta
+AS
+BEGIN
+    DECLARE @siguientecodigo INT
+    DECLARE @valoractual INT
 
--- verificamos los valores
-if @valoractual>@siguientecodigo
-set @siguientecodigo=@valoractual
-end
--- retornamos el resultado
-select @siguientecodigo as SiguienteCodigo
-end
-go
-exec SP_CodigoVenta
-go
+    IF NOT EXISTS (SELECT 1 FROM venta)
+    BEGIN
+        SET @siguientecodigo = 1
+    END
+    ELSE
+    BEGIN
+        SELECT @siguientecodigo = IDENT_CURRENT('venta') + 1
+
+        DBCC CHECKIDENT ('venta', NORESEED) WITH NO_INFOMSGS
+
+        SELECT @valoractual = IDENT_CURRENT('venta') + 1
+
+        IF @valoractual > @siguientecodigo
+            SET @siguientecodigo = @valoractual
+    END
+
+    SELECT @siguientecodigo AS SiguienteCodigo
+END
+GO
+
+
+-- Mostrar Venta Detalle
+IF EXISTS (SELECT * FROM sys.procedures WHERE NAME = 'SP_MostrarVentaDetalle')
+DROP PROCEDURE SP_MostrarVentaDetalle
+GO
+
+CREATE PROC SP_MostrarVentaDetalle
+AS
+BEGIN
+    SELECT
+        v.idventa,
+        v.fecventa,
+        v.estventa,
+        c.nomcli,
+        c.apepcli,
+        c.apemcli,
+        e.nomemp,
+        e.apepemp,
+        e.apememp,
+        tp.nomtippag,
+        SUM(dv.subtotventa) AS Subtotal
+    FROM venta v
+        INNER JOIN cliente c
+            ON v.idcli = c.idcli
+        INNER JOIN empleado e
+            ON v.idemp = e.idemp
+        INNER JOIN tipopago tp
+            ON v.idtippag = tp.idtippag
+        INNER JOIN detalleventa dv
+            ON v.idventa = dv.idventa
+    GROUP BY
+        v.idventa,
+        v.fecventa,
+        v.estventa,
+        c.nomcli,
+        c.apepcli,
+        c.apemcli,
+        e.nomemp,
+        e.apepemp,
+        e.apememp,
+        tp.nomtippag
+END
+GO
+
+
+-- Mostrar Venta
+IF EXISTS (SELECT * FROM sys.procedures WHERE NAME = 'SP_MostrarVenta')
+DROP PROCEDURE SP_MostrarVenta
+GO
+
+CREATE PROC SP_MostrarVenta
+AS
+BEGIN
+    SELECT
+        v.idventa,
+        v.fecventa,
+        v.estventa,
+        c.nomcli,
+        c.apepcli,
+        c.apemcli,
+        e.nomemp,
+        e.apepemp,
+        e.apememp,
+        tp.nomtippag
+    FROM venta v
+        INNER JOIN cliente c
+            ON v.idcli = c.idcli
+        INNER JOIN empleado e
+            ON v.idemp = e.idemp
+        INNER JOIN tipopago tp
+            ON v.idtippag = tp.idtippag
+END
+GO
+
+
+-- Mostrar Detalle Venta
+IF EXISTS (SELECT * FROM sys.procedures WHERE NAME = 'SP_MostrarDetalleVenta')
+DROP PROCEDURE SP_MostrarDetalleVenta
+GO
+
+CREATE PROC SP_MostrarDetalleVenta
+    @codigo INT
+AS
+BEGIN
+    SELECT
+        dv.idventa,
+        p.idprod,
+        p.titprod,
+        dv.precuventa,
+        dv.canventa,
+        dv.subtotventa
+    FROM detalleventa dv
+        INNER JOIN producto p
+            ON dv.idprod = p.idprod
+    WHERE dv.idventa = @codigo
+END
+GO
+
+
+-- Anular Venta
+IF EXISTS (SELECT * FROM sys.procedures WHERE NAME = 'SP_AnularVenta')
+DROP PROCEDURE SP_AnularVenta
+GO
+
+CREATE PROC SP_AnularVenta
+    @codigo INT
+AS
+BEGIN
+    BEGIN TRAN SP_AnularVenta
+
+    BEGIN TRY
+        UPDATE venta
+        SET estventa = 0
+        WHERE idventa = @codigo
+
+        COMMIT TRAN SP_AnularVenta
+    END TRY
+
+    BEGIN CATCH
+        ROLLBACK TRAN SP_AnularVenta
+    END CATCH
+END
+GO
+
+
+-- Habilitar Venta
+IF EXISTS (SELECT * FROM sys.procedures WHERE NAME = 'SP_HabilitarVenta')
+DROP PROCEDURE SP_HabilitarVenta
+GO
+
+CREATE PROC SP_HabilitarVenta
+    @codigo INT
+AS
+BEGIN
+    BEGIN TRAN SP_HabilitarVenta
+
+    BEGIN TRY
+        UPDATE venta
+        SET estventa = 1
+        WHERE idventa = @codigo
+
+        COMMIT TRAN SP_HabilitarVenta
+    END TRY
+
+    BEGIN CATCH
+        ROLLBACK TRAN SP_HabilitarVenta
+    END CATCH
+END
+GO
