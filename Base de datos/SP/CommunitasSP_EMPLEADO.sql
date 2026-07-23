@@ -2,7 +2,7 @@
 use EI5447CommunitasBD
 go
 
--- cliente
+-- empleado
 -- Mostrar 
 IF EXISTS(SELECT * FROM sys.procedures WHERE NAME='SP_MostrarEmpleado') 
 DROP PROCEDURE SP_MostrarEmpleado
@@ -184,9 +184,10 @@ from empleado e
 inner join tipodocumento td on e.idtipdoc=td.idtipdoc
 inner join rol r on e.idrol=r.idrol
 inner join distrito d on e.iddis=d.iddis
+where e.idemp = @codigo
 end
 go
-exec SP_BuscarEmpleadoXCodigo 1
+exec SP_BuscarEmpleadoXCodigo 5
 go
 
 -- Actualizar Plato

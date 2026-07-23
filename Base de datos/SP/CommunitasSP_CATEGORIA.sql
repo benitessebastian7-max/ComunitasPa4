@@ -16,23 +16,20 @@ go
 exec SP_MostrarCategoria
 go
 
--- Mostrar Todo
-IF EXISTS(SELECT * FROM sys.procedures WHERE NAME='SP_MostrarCategoriaTodo') 
-DROP PROCEDURE SP_MostrarCategoriaTodo
-GO
 
-CREATE PROC SP_MostrarCategoriaTodo
-AS
-BEGIN
-    SELECT 
-        idcategoria,
-        nomcategoria,
-        estcategoria
-    FROM categoria
-END
-GO
-EXEC SP_MostrarCategoriaTodo
-GO
+
+-- Mostrar Todo
+IF EXISTS(SELECT * FROM sys.procedures WHERE NAME='SP_MostrarTodoCategoria') 
+DROP PROCEDURE SP_MostrarTodoCategoria
+go
+CREATE PROC	SP_MostrarTodoCategoria
+as
+begin
+select * from categoria
+end
+go
+exec SP_MostrarTodoCategoria
+go
 
 -- Registrar
 IF EXISTS(SELECT * FROM sys.procedures WHERE NAME='SP_RegistrarCategoria') 
@@ -147,7 +144,6 @@ else
 begin
 -- obtener el proximo valor del identity
 select @siguientecodigo=IDENT_CURRENT('categoria')+1
-
 -- comprobando que el identity es correcto
 dbcc checkident ('categoria',noreseed) with no_infomsgs
 select @valoractual=IDENT_CURRENT('categoria')+1
