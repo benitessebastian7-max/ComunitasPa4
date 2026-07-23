@@ -73,6 +73,8 @@
     <Content Include="Categoria\FormHabilitarCategoria.aspx" />
     <Content Include="Cliente\FormCliente.aspx" />
     <Content Include="Cliente\FormHabilitarCliente.aspx" />
+    <Content Include="Distrito\FormDistrito.aspx" />
+    <Content Include="Distrito\FormHabilitarDistrito.aspx" />
     <Content Include="Editorial\FormEditorial.aspx" />
     <Content Include="Editorial\FormHabilitarEditorial.aspx" />
     <Content Include="Empleado\FormEmpleado.aspx" />
@@ -80,8 +82,16 @@
     <Content Include="FormMenuPrincipal.aspx" />
     <Content Include="Global.asax" />
     <Content Include="index.aspx" />
+    <Content Include="Pais\FormHabilitarPais.aspx" />
+    <Content Include="Pais\FormPais.aspx" />
     <Content Include="Producto\FormHabilitarProducto.aspx" />
     <Content Include="Producto\FormProducto.aspx" />
+    <Content Include="Proveedor\FormHabilitarProveedor.aspx" />
+    <Content Include="Proveedor\FormProveedor.aspx" />
+    <Content Include="Rol\FormHabilitarRol.aspx" />
+    <Content Include="Rol\FormRol.aspx" />
+    <Content Include="TipoDocumento\FormHabilitarTipoDocumento.aspx" />
+    <Content Include="TipoDocumento\FormTipoDocumento.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -126,6 +136,20 @@
     </Compile>
     <Compile Include="Cliente\FormHabilitarCliente.aspx.designer.cs">
       <DependentUpon>FormHabilitarCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Distrito\FormDistrito.aspx.cs">
+      <DependentUpon>FormDistrito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Distrito\FormDistrito.aspx.designer.cs">
+      <DependentUpon>FormDistrito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Distrito\FormHabilitarDistrito.aspx.cs">
+      <DependentUpon>FormHabilitarDistrito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Distrito\FormHabilitarDistrito.aspx.designer.cs">
+      <DependentUpon>FormHabilitarDistrito.aspx</DependentUpon>
     </Compile>
     <Compile Include="Editorial\FormEditorial.aspx.cs">
       <DependentUpon>FormEditorial.aspx</DependentUpon>
@@ -172,6 +196,20 @@
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pais\FormHabilitarPais.aspx.cs">
+      <DependentUpon>FormHabilitarPais.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pais\FormHabilitarPais.aspx.designer.cs">
+      <DependentUpon>FormHabilitarPais.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pais\FormPais.aspx.cs">
+      <DependentUpon>FormPais.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pais\FormPais.aspx.designer.cs">
+      <DependentUpon>FormPais.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Producto\FormHabilitarProducto.aspx.cs">
       <DependentUpon>FormHabilitarProducto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -187,12 +225,54 @@
       <DependentUpon>FormProducto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proveedor\FormHabilitarProveedor.aspx.cs">
+      <DependentUpon>FormHabilitarProveedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Proveedor\FormHabilitarProveedor.aspx.designer.cs">
+      <DependentUpon>FormHabilitarProveedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Proveedor\FormProveedor.aspx.cs">
+      <DependentUpon>FormProveedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Proveedor\FormProveedor.aspx.designer.cs">
+      <DependentUpon>FormProveedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Rol\FormHabilitarRol.aspx.cs">
+      <DependentUpon>FormHabilitarRol.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Rol\FormHabilitarRol.aspx.designer.cs">
+      <DependentUpon>FormHabilitarRol.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Rol\FormRol.aspx.cs">
+      <DependentUpon>FormRol.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Rol\FormRol.aspx.designer.cs">
+      <DependentUpon>FormRol.aspx</DependentUpon>
+    </Compile>
     <Compile Include="templates\Plantilla.Master.cs">
       <DependentUpon>Plantilla.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="templates\Plantilla.Master.designer.cs">
       <DependentUpon>Plantilla.Master</DependentUpon>
+    </Compile>
+    <Compile Include="TipoDocumento\FormHabilitarTipoDocumento.aspx.cs">
+      <DependentUpon>FormHabilitarTipoDocumento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TipoDocumento\FormHabilitarTipoDocumento.aspx.designer.cs">
+      <DependentUpon>FormHabilitarTipoDocumento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TipoDocumento\FormTipoDocumento.aspx.cs">
+      <DependentUpon>FormTipoDocumento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TipoDocumento\FormTipoDocumento.aspx.designer.cs">
+      <DependentUpon>FormTipoDocumento.aspx</DependentUpon>
     </Compile>
     <Compile Include="util\Util.cs" />
   </ItemGroup>

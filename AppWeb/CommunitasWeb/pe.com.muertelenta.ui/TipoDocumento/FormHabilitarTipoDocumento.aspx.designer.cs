@@ -42,6 +42,15 @@ namespace pe.com.communitas.ui.tipodocumento
         protected global::System.Web.UI.WebControls.Button btnRegresar;
 
         /// <summary>
+        /// lblCod control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCod;
+
+        /// <summary>
         /// hfCodigoSeleccionado control.
         /// </summary>
         /// <remarks>

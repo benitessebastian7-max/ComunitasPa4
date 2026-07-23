@@ -24,13 +24,13 @@ namespace pe.com.communitas.ui.proveedor
         protected global::System.Web.UI.WebControls.TextBox txtCod;
 
         /// <summary>
-        /// txtNom control.
+        /// txtRazSoc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNom;
+        protected global::System.Web.UI.WebControls.TextBox txtRazSoc;
 
         /// <summary>
         /// txtRuc control.

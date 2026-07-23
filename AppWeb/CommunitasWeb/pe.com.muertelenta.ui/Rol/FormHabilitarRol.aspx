@@ -27,6 +27,7 @@
             <asp:Button ID="btnHabilitar" runat="server" Text="Habilitar" CssClass="btn-action btn-habilitar" OnClick="btnHabilitar_Click" OnClientClick="return confirm('¿Habilitar este rol?');" />
             <asp:Button ID="btnDeshabilitar" runat="server" Text="Deshabilitar" CssClass="btn-action btn-deshabilitar" OnClick="btnDeshabilitar_Click" OnClientClick="return confirm('¿Deshabilitar este rol?');" /> 
             <asp:Button ID="btnRegresar" runat="server" Text="Regresar" CssClass="btn-action btn-regresar" OnClick="btnRegresar_Click" />
+            <asp:Label ID="lblCod" runat="server" Text="Label"></asp:Label>
         </div>
         <div class="admin-card mx-auto" style="max-width: 600px;">
             <asp:HiddenField ID="hfCodigoSeleccionado" runat="server" />
