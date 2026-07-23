@@ -60,13 +60,31 @@ namespace pe.com.communitas.ui.autor
         protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
-        /// txtApe control.
+        /// txtApep control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtApe;
+        protected global::System.Web.UI.WebControls.TextBox txtApep;
+
+        /// <summary>
+        /// Label6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label6;
+
+        /// <summary>
+        /// txtApem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtApem;
 
         /// <summary>
         /// Label5 control.

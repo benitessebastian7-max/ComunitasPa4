@@ -1,0 +1,14 @@
+# Visual Studio
+.vs/
+**/.vs/
+
+# Carpetas de compilacion
+bin/
+obj/
+**/bin/
+**/obj/
+
+# Archivos de usuario
+*.user
+*.suo
+*.cache

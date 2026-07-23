@@ -196,9 +196,10 @@
                 <Columns>
                     <asp:BoundField DataField="codigo" HeaderText="Cód" />
                     <asp:BoundField DataField="nombre" HeaderText="Nombre" />
-                    <asp:BoundField DataField="apPaterno" HeaderText="Ap. Paterno" />
-                    <asp:BoundField DataField="apMaterno" HeaderText="Ap. Materno" />
-                    <asp:BoundField DataField="documento" HeaderText="Documento" />
+                    <asp:BoundField DataField="apellidopaterno" HeaderText="Ap. Paterno" />
+                    <asp:BoundField DataField="apellidomaterno" HeaderText="Ap. Materno" />
+                    <asp:BoundField DataField="tipodocumento.nombre" HeaderText="Tipo de documento" />
+                    <asp:BoundField DataField="numerodocumento" HeaderText="Documento" />
                     <asp:BoundField DataField="distrito.nombre" HeaderText="Distrito" />
                     
                     <asp:TemplateField HeaderText="Estado">

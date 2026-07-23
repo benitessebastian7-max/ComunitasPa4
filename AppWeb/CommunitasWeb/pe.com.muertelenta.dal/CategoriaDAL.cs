@@ -22,7 +22,7 @@ namespace pe.com.communitas.dal
             {
                 cmd = new SqlCommand();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "SP_MostrarCategoriaTodo";
+                cmd.CommandText = "SP_MostrarTodoCategoria";
                 cmd.Connection = objconexion.Conectar();
 
                 dr = cmd.ExecuteReader();

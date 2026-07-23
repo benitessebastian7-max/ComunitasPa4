@@ -47,13 +47,6 @@
                     </div>
                 </div>
 
-                <div class="mb-3 row align-items-center">
-                    <label class="col-sm-3 col-form-label text-end fw-bold form-label-custom">País de Origen:</label>
-                    <div class="col-sm-9">
-                        <asp:DropDownList ID="ddlPais" runat="server" CssClass="form-select"></asp:DropDownList>
-                    </div>
-                </div>
-
                 <div class="mb-2 row align-items-center">
                     <label class="col-sm-3 col-form-label text-end fw-bold form-label-custom">Estado:</label>
                     <div class="col-sm-9">
@@ -79,7 +72,6 @@
                 <Columns>
                     <asp:BoundField DataField="codigo" HeaderText="Cód" />
                     <asp:BoundField DataField="nombre" HeaderText="Nombre" />
-                    <asp:BoundField DataField="pais.nombre" HeaderText="País" />
 
                     <asp:TemplateField HeaderText="Estado">
                         <ItemTemplate>

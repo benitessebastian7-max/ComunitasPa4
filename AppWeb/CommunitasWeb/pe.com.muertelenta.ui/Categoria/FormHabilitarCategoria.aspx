@@ -36,6 +36,7 @@
             <asp:Button ID="btnHabilitar" runat="server" Text="Habilitar" CssClass="btn-action btn-habilitar" OnClick="btnHabilitar_Click" OnClientClick="return confirm('¿Estás seguro de que quieres habilitar esta categoría?');" />
             <asp:Button ID="btnDeshabilitar" runat="server" Text="Deshabilitar" CssClass="btn-action btn-deshabilitar" OnClick="btnDeshabilitar_Click" OnClientClick="return confirm('¿Estás seguro de que quieres deshabilitar esta categoría?');" /> 
             <asp:Button ID="btnRegresar" runat="server" Text="Regresar" CssClass="btn-action btn-regresar" OnClick="btnRegresar_Click" />
+            <asp:Label ID="lblCod" runat="server" Text="Label"></asp:Label>
         </div>
         
         <!-- Contenedor de la Tabla -->

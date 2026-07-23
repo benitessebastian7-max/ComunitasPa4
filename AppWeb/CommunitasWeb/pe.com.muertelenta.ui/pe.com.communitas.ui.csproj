@@ -75,8 +75,8 @@
     <Content Include="Cliente\FormHabilitarCliente.aspx" />
     <Content Include="Editorial\FormEditorial.aspx" />
     <Content Include="Editorial\FormHabilitarEditorial.aspx" />
-    <Content Include="empleado\FormEmpleado.aspx" />
-    <Content Include="empleado\FormHabilitarEmpleado.aspx" />
+    <Content Include="Empleado\FormEmpleado.aspx" />
+    <Content Include="Empleado\FormHabilitarEmpleado.aspx" />
     <Content Include="FormMenuPrincipal.aspx" />
     <Content Include="Global.asax" />
     <Content Include="index.aspx" />
@@ -141,18 +141,18 @@
     <Compile Include="Editorial\FormHabilitarEditorial.aspx.designer.cs">
       <DependentUpon>FormHabilitarEditorial.aspx</DependentUpon>
     </Compile>
-    <Compile Include="empleado\FormEmpleado.aspx.cs">
+    <Compile Include="Empleado\FormEmpleado.aspx.cs">
       <DependentUpon>FormEmpleado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="empleado\FormEmpleado.aspx.designer.cs">
+    <Compile Include="Empleado\FormEmpleado.aspx.designer.cs">
       <DependentUpon>FormEmpleado.aspx</DependentUpon>
     </Compile>
-    <Compile Include="empleado\FormHabilitarEmpleado.aspx.cs">
+    <Compile Include="Empleado\FormHabilitarEmpleado.aspx.cs">
       <DependentUpon>FormHabilitarEmpleado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="empleado\FormHabilitarEmpleado.aspx.designer.cs">
+    <Compile Include="Empleado\FormHabilitarEmpleado.aspx.designer.cs">
       <DependentUpon>FormHabilitarEmpleado.aspx</DependentUpon>
     </Compile>
     <Compile Include="FormMenuPrincipal.aspx.cs">

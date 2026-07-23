@@ -33,7 +33,7 @@ namespace pe.com.communitas.dal
         //Microsoft.Data.SqlClient: el proveedor moderno y recomendado
 
         //cadena de conexion
-        private string cadena = "Data Source=DESKTOP-312AGLH; Initial Catalog=EI5447CommunitasBD; Integrated Security=True; TrustServerCertificate=True;";
+        private string cadena = "Data Source=.; Initial Catalog=EI5447CommunitasBD; Integrated Security=True; TrustServerCertificate=True;";
 
         //creamos un objeto de tipo SqlConnection
         private SqlConnection xcon;
